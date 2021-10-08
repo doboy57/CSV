@@ -38,7 +38,7 @@ header_row_death = next(csv_file_death)
 TMAX_death = header_row_death.index("TMAX")
 TMIN_death = header_row_death.index("TMIN")
 date_death = header_row_death.index("DATE")
-station_d = header_row_death.index("NAME")
+station_d = header_row_death.index("NAME") 
 
 
 
