@@ -38,8 +38,7 @@ header_row_death = next(csv_file_death)
 TMAX_death = header_row_death.index("TMAX")
 TMIN_death = header_row_death.index("TMIN")
 date_death = header_row_death.index("DATE")
-station_d = header_row_death.index("NAME") 
-
+station_d = header_row_death.index("NAME")
 
 
 for row in csv_file_death:
@@ -47,7 +46,7 @@ for row in csv_file_death:
         high = int(row[TMAX_death])
         low = int(row[TMIN_death])
         the_date = datetime.strptime(row[date_death], "%Y-%m-%d")
-                                     
+
         station = str(row[station_d])
     except ValueError:
         print(f"Missing data for {the_date}")
@@ -80,5 +79,10 @@ plt.fill_between(dates_death, highs_death, lows_death, facecolor="blue", alpha=0
 
 plt.title(station_death[1])
 
-plt.suptitle("Temperature comparison between "+str(station_sitka[1])+ " and "+ str(station_death[1]))
+plt.suptitle(
+    "Temperature comparison between "
+    + str(station_sitka[1])
+    + " and "
+    + str(station_death[1])
+)
 plt.show()
